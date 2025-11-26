@@ -75,14 +75,10 @@ namespace Listak
         {
             if (n <= 1)
                 return;
-
-            // Recursively bogobogo-sort the first n-1 items
             Bogobogo(list, n - 1);
 
-            // Check if the first n items are sorted
             if (!IsSorted(list, n))
             {
-                // Ruin everything on purpose :)
                 Shuffle(list);
                 Bogobogo(list, n);
             }
