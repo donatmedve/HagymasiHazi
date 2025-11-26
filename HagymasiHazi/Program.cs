@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,12 +33,6 @@ namespace Listak
             }
             Console.WriteLine($"Az aszam számainak átlaga:{avrage / szamsorA.Count}");
 
-            //4
-            List<int> ujSzamsor = new List<int>();
-            foreach (int szam in szamsorB) { ujSzamsor.Add(szam); }
-            foreach (int szam in szamsorA) { ujSzamsor.Add(szam); }
-            BogoBogoSort(ujSzamsor);
-
             //5
             int counter = 0;
             foreach (string patron in tintapatronok)
@@ -62,6 +57,14 @@ namespace Listak
                 }else { plusSign = false; }
                 
             }
+            
+            
+            //4
+            List<int> ujSzamsor = new List<int>();
+            foreach (int szam in szamsorB) { ujSzamsor.Add(szam); }
+            foreach (int szam in szamsorA) { ujSzamsor.Add(szam); }
+            BogoBogoSort(ujSzamsor);
+            Console.WriteLine($"Sorted list: {ujSzamsor}");
             
         }
         static void BogoBogoSort(List<int> list)
